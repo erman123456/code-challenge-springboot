@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+  h2:
+    container_name: 'h2'
+    image: 1000kit/h2
+    environment:
+      H2_JDBC_URL: 'jdbc:h2:mem:code_challenge'
+      H2_JDBC_USERNAME: 'root'
+      H2_JDBC_PASSWORD: '123456'
+      H2_JDBC_DRIVER: org.h2.Driver
+      H2_JDBC_DRIVER_CLASS: org.h2.Driver
+    ports:
+      - "9092:9092"
+    volumes:
+      - code_challenge_h2-data:/opt/h2-data
+volumes:
+  code_challenge_h2-data:
+#END
